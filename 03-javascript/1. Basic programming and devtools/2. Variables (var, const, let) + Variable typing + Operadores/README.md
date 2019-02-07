@@ -111,15 +111,8 @@ alert( 2 ** 2 ); // 4  (2 * 2)
 alert( 2 ** 3 ); // 8  (2 * 2 * 2)
 alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2)
 ```
-The operator works for non-integer numbers of `a` and `b` as well.
 
-For instance:
-```
-alert( 4 ** (1/2) ); // 2 (power of 1/2 is the same as a square root, that's maths)
-alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a cubic root)
-```
-
-Increment/decrement %
+Increment/decrement
 --------------------------------
 
 Increasing or decreasing a number by one is among the most common numerical operations.
@@ -147,52 +140,6 @@ When the operator goes after the variable, it is in "postfix form": `counter++`.
 The "prefix form" is when the operator goes before the variable: `++counter`.
 Both of these statements do the same thing: increase `counter` by `1`.
 
-Is there any difference? Yes, but we can only see it if we use the returned value of `++/--`.
-
-Let’s clarify. As we know, all operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
-
-To see the difference, here’s an example:
-
-```
-let counter = 1;
-let a = ++counter;
-alert(a); // 2
-```
-
-In this case, the prefix form `++counter` increments `counter` and returns the new value, `2`. So, the alert shows `2`.
-
-
-Now, let’s use the postfix form:
-
-```
-let counter = 1;
-let a = counter++; 
-alert(a); // 1
-```
-
-Here, the postfix form `counter++` also increments `counter` but returns the old value (prior to increment). So, the alert shows `1`.
-
-To summarize:
-
-- If the result of increment/decrement is not used, there is no difference in which form to use:
-```
-let counter = 0;
-counter++;
-++counter;
-alert( counter ); // 2, the lines above did the same
-```
-- If we’d like to increase a value and immediately use the result of the operator, we need the prefix form:
-
-```
-let counter = 0;
-alert( ++counter ); // 1
-```
-
-- If we’d like to increment a value but use its previous value, we need the postfix form:
-```
-let counter = 0;
-alert( counter++ ); // 0
-```
 
 Operator precedence in Javascript
 --------------------------------
@@ -205,7 +152,11 @@ Parentheses override any precedence, so if we’re not satisfied with the implic
 
 There are many operators in JavaScript. Every operator has a corresponding precedence number. The one with the larger number executes first. If the precedence is the same, the execution order is from left to right.
 
+ 
 Here’s an extract from the [precedence table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence):
+
+Esta tabla es confusa, tiene operadores complicados (suma unaria, negación), no he encontrado otra sencilla en Google. 
+Así que deberíamos preparar otra
 
 ![operators_precedence](./operators_precedence.png)
 
